@@ -24,7 +24,7 @@ class DashBoard extends React.Component {
               </span>
               <Divider type="vertical" />
               <span
-                onClick={this.props.deleteData}
+                onClick={()=>this.props.deleteData(data.id)}
                 style={{ cursor: "pointer" }}
               >
                 Delete

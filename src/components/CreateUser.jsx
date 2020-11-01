@@ -12,9 +12,6 @@ class CreateUser extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
     });
   };
   handleChange = event => {
@@ -25,21 +22,19 @@ class CreateUser extends React.Component {
   };
 
   render() {
-    const { getFieldDecorator } = this.props.form;
+    // const { getFieldDecorator } = this.props.form;
     const { name, task, age } = this.props;
     return (
       <div>
         <Modal
-          title={this.props.create ? "Create New User" : "Update User Data"}
+          title={this.props.create ? "Create New User" : "Update User"}
           visible={this.props.visible}
           onOk={this.props.handleOk}
           onCancel={this.props.handleCancel}
         >
-          <i>{name}</i>
-          <i>{age}</i>
-          <i>{task}</i>
+          {/* <i>{name}</i> */}
           <Form onSubmit={this.handleSubmit} className="login-form">
-            <Form.Item>
+            <Form.Item >
               {/* {getFieldDecorator("username", {
                 rules: [
                   { required: true, message: "Please input your username!" }

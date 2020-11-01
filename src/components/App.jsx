@@ -48,14 +48,12 @@ class App extends React.Component {
     });
   };
   handleOk = e => {
-    console.log(e);
     this.setState({
       visible: false
     });
   };
 
   handleCancel = e => {
-    console.log(e);
     this.setState({
       visible: false
     });
@@ -117,7 +115,6 @@ class App extends React.Component {
     });
   };
    updateHandler= id => {
-    alert(id)
     if (this.state.id === "") {
       this.setState({
         error: true
@@ -142,22 +139,22 @@ class App extends React.Component {
       let name = this.state.name;
       let age = this.state.age;
       let task = this.state.task;
-      let length = array.length;
-      let obj = {id:length + 1,name,age,task};
+      let obj = {id,name,age,task};
       array.splice(index, 1, obj)
       this.setState({
         dataSource:array,
         id:'',
         name:'',
         age:'',
-        task:''
+        task:'',
+        visible: false
       })
     }
   };
   render() {
     return (
       <div>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
