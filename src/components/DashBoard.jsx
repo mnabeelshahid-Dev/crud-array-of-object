@@ -1,9 +1,9 @@
-import React from "react";
-import "antd/dist/antd.css";
-import { Divider } from "antd";
+import React from 'react'
+import 'antd/dist/antd.css'
+import { Divider } from 'antd'
 class DashBoard extends React.Component {
   render() {
-    const data = this.props.data;
+    const { data, showModal, editData, deleteData } = this.props
     return (
       <>
         <tr>
@@ -14,18 +14,18 @@ class DashBoard extends React.Component {
           <td>
             <span>
               <span
-                style={{ cursor: "pointer" }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  this.props.showModal(false);
-                  this.props.editData(data.id);
+                  showModal(false)
+                  editData(data.id)
                 }}
               >
                 Edit
               </span>
               <Divider type="vertical" />
               <span
-                onClick={()=>this.props.deleteData(data.id)}
-                style={{ cursor: "pointer" }}
+                onClick={() => deleteData(data.id)}
+                style={{ cursor: 'pointer' }}
               >
                 Delete
               </span>
@@ -33,7 +33,7 @@ class DashBoard extends React.Component {
           </td>
         </tr>
       </>
-    );
+    )
   }
 }
-export default DashBoard;
+export default DashBoard
